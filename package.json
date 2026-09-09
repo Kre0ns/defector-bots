@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "devalue": "^5.9.2"
+  },
+  "type": "module"
+}
