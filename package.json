@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "devalue": "^5.9.2"
+    "devalue": "^5.9.2",
+    "nodeplotlib": "^1.1.2",
+    "rxjs": "^7.8.2"
   },
   "type": "module"
 }

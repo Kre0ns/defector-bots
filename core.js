@@ -1,5 +1,3 @@
-export const NUM_FEATURES = 7;
-
 export function features(history) {
     const n = history.length !== 0 ? history.length : 0.1;
 
