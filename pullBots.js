@@ -1,8 +1,8 @@
 import { writeFileSync, rmSync, mkdirSync } from 'fs';
 import { parse } from 'devalue';
-import { POOL_DIR } from './train.js';
 
-const TARGET_SIZE = 130;
+const POOL_DIR = "./pool"
+const TARGET_SIZE = 149;
 const DELAY = 10000
 
 function sleep(ms)

@@ -5,7 +5,7 @@ import path from 'path';
 import { plot } from 'nodeplotlib';
 import { BehaviorSubject } from 'rxjs';
 
-export const POOL_DIR = "./pool"
+const POOL_DIR = "../pool"
 const NUM_FEATURES = 7;
 const NUM_HIDDEN = 5;
 const POP_SIZE = 60;
