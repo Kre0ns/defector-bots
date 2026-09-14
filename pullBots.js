@@ -2,7 +2,7 @@ import { writeFileSync, rmSync, mkdirSync } from 'fs';
 import { parse } from 'devalue';
 
 const POOL_DIR = "./pool"
-const TARGET_SIZE = 149;
+const TARGET_SIZE = 203;
 const DELAY = 10000
 
 function sleep(ms)
@@ -59,15 +59,23 @@ async function poolIds()
 
     do 
     {
-        if (!first) await sleep(DELAY);
-        else first = false;
+        try
+        {
+            if (!first) await sleep(DELAY);
+            else first = false;
 
-        const subPool = await fetchIds();
-        subPool.forEach(id => {
-            pool.add(id);
-        });
+            const subPool = await fetchIds();
+            subPool.forEach(id => {
+                pool.add(id);
+            });
 
-        console.log(`Pulled     ${pool.size}/${TARGET_SIZE}`);
+            console.log(`Pulled     ${pool.size}/${TARGET_SIZE}`);
+        }
+        catch (e)
+        {
+            console.log(`Got error during fetch ${e}`);
+        }
+    
 
     } while (pool.size < TARGET_SIZE)
 
